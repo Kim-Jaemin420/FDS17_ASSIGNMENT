@@ -13,13 +13,11 @@ for (let i = 0; i < 10; i++) {
 ```
 <!-- 3. for문을 사용하여 0부터 10미만의 정수 중에서 짝수만을 작은 수부터 문자열로 출력하시오. -->
 ```js
-evenNum = '';
+var evenStr = '';
 for ( let i = 0; i < 10; i++) {
-  if ( i % 2 === 0) {
-    evenNum += i;
-  }
+  if ( i % 2 === 0) evenStr += i;
 }
-console.log(evenNum);
+console.log(evenStr);
 ```
 <!-- 4. for문을 사용하여 0부터 10미만의 정수 중에서 홀수만을 큰수부터 출력하시오. -->
 ```js
@@ -30,26 +28,26 @@ for ( let i = 10; i > 0; i--) {
 <!-- 5. while문을 사용하여 0 부터 10 미만의 정수 중에서 짝수만을 작은 수부터 출력하시오. -->
 ```js
 var even = 0;
-while (even < 10) {
-  console.log(even);
-  even += 2;
+while(even < 10) {
+  if( even % 2 === 0) console.log(even);
+  even++;
 }
 ```
 <!-- 6. while문을 사용하여 0 부터 10 미만의 정수 중에서 홀수만을 큰수부터 출력하시오. -->
 ```js
-var odd = 9;
-while ( odd > 0) {
-  console.log(odd);
-  odd -= 2;
+var odd = 10;
+while(odd > 0) {
+  if ( odd % 2) console.log(odd);
+  odd--;
 }
 ```
 <!-- 7. for 문을 사용하여 0부터 10미만의 정수의 합을 출력하시오. -->
 ```js
-var num = 0;
+var sum = 0;
 for ( let i = 0; i < 10; i++) {
-  num = num + i;
+  sum += i;
 }
-console.log(num);
+console.log(sum);
 ```
 <!-- 8. 1부터 20 미만의 정수 중에서 2 또는 3의 배수가 아닌 수의 총합을 구하시오. -->
 ```js
@@ -73,19 +71,17 @@ console.log(num);
 ```
 <!-- 10. 두 개의 주사위를 던졌을 때, 눈의 합이 6이 되는 모든 경우의 수를 출력하시오. -->
 ```js
-for ( let i = 0; i <= 6; i++) {
-  for ( let j = 0; j <= 6; j++) {
-    if ( i + j === 6) {
-      console.log(`[${i}, ${j}]`);
-    }
+for ( let i = 1; i <= 6; i++) {
+  for ( let j = 1; j <= 6; j++) {
+    if ( i + j === 6) console.log(`[${i}, ${j}]`); 
   }
 }
 ```
 <!-- 11. 삼각형 출력하기 - pattern 1 -->
 ```js
 for ( let i = 0; i < 5; i++) {
-  triangle = '';
-  for ( let j = 1; j <= i+1; j++) {
+  var triangle = '';
+  for ( let j = 0; j <= i; j++) {
     triangle += '*';
   }
   console.log(triangle);
